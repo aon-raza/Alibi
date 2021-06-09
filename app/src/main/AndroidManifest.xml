@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Alibi">
-        <activity android:name=".activity.SignUpActivity"></activity>
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.SignUpActivity" />
         <activity android:name=".activity.SignInActivity" />
         <activity android:name=".activity.SelectSignUpActivity" />
         <activity android:name=".activity.SplashActivity">

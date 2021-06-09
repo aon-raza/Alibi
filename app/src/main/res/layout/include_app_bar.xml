@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/layoutCL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gotham_rounded_medium"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutCL"
+            app:layout_constraintEnd_toEndOf="@+id/layoutCL"
+            app:layout_constraintStart_toStartOf="@+id/layoutCL"
+            app:layout_constraintTop_toTopOf="@+id/layoutCL" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menuIV"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginVertical="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:src="@drawable/drawer_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutCL"
+            app:layout_constraintStart_toStartOf="@+id/layoutCL"
+            app:layout_constraintTop_toTopOf="@+id/layoutCL" />
+
+
+        <ImageView
+            android:id="@+id/otherIV"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/layoutCL"
+            app:layout_constraintEnd_toEndOf="@+id/layoutCL"
+            app:layout_constraintTop_toTopOf="@+id/layoutCL" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

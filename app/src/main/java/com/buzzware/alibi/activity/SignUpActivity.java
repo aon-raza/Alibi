@@ -2,6 +2,7 @@ package com.buzzware.alibi.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
@@ -25,6 +26,10 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void setListener() {
         binding.closeIV.setOnClickListener(v-> {
+            finish();
+        });
+        binding.signInTV.setOnClickListener(view -> {
+            startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
             finish();
         });
     }

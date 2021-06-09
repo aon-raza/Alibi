@@ -67,15 +67,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoSizeMaxTextSize="@dimen/_13ssp"
-        android:autoSizeMinTextSize="@dimen/_12ssp"
+        android:autoSizeMinTextSize="@dimen/_10ssp"
         android:autoSizeTextType="uniform"
         android:text="By signing in or signing up,you agree to Alibi's"
         android:textColor="@color/black"
-        android:textSize="@dimen/_12ssp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:textSize="@dimen/_10ssp"
         android:fontFamily="@font/gotham_rounded_medium"
         app:layout_constraintBottom_toTopOf="@+id/privacyTV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/signInBT"
+        app:layout_constraintStart_toStartOf="@id/signInBT" />
 
     <TextView
         android:id="@+id/privacyTV"
@@ -83,14 +84,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_40sdp"
         android:autoSizeMaxTextSize="@dimen/_14ssp"
-        android:autoSizeMinTextSize="@dimen/_12ssp"
+        android:autoSizeMinTextSize="@dimen/_10ssp"
         android:autoSizeTextType="uniform"
         android:text="Term of Service and Privacy Policy"
         android:textColor="@color/green"
-        android:textSize="@dimen/_13ssp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:textSize="@dimen/_11ssp"
         android:fontFamily="@font/gotham_rounded_medium"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/signInBT"
+        app:layout_constraintStart_toStartOf="@id/signInBT"
         android:textStyle="bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

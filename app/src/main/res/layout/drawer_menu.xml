@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/back_color"
+    android:background="@color/white"
     android:paddingLeft="@dimen/_10sdp"
     android:paddingRight="@dimen/_10sdp">
     <View
@@ -13,6 +13,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/drawerMenuIV"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginVertical="@dimen/_1sdp"
+        android:src="@drawable/drawer_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@id/view" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/userIV"
@@ -58,73 +68,73 @@
         app:layout_constraintStart_toEndOf="@id/userIV"
         app:layout_constraintTop_toBottomOf="@id/userNameTV" />
     <ImageView
-        android:id="@+id/utterIV"
+        android:id="@+id/activeEventsIV"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
-        android:src="@drawable/utter_icon"
+        android:src="@drawable/active_events_nav"
         android:layout_marginTop="@dimen/_50sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userSirNameTV"/>
     <TextView
-        android:id="@+id/utterTV"
+        android:id="@+id/activeEventsTV"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_25sdp"
         android:textSize="@dimen/_12ssp"
         android:textColor="@color/black"
-        android:text="Utter"
+        android:text="Active Events"
         android:gravity="center_vertical"
-        android:fontFamily="@font/montserrat_medium"
+        android:fontFamily="@font/gotham_rounded_medium"
         android:layout_marginLeft="@dimen/_10sdp"
-        app:layout_constraintStart_toEndOf="@id/utterIV"
-        app:layout_constraintTop_toTopOf="@id/utterIV" />
+        app:layout_constraintStart_toEndOf="@id/activeEventsIV"
+        app:layout_constraintTop_toTopOf="@id/activeEventsIV" />
     <ImageView
-        android:id="@+id/profileIV"
+        android:id="@+id/rostersIV"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
-        android:src="@drawable/profile_icon"
+        android:src="@drawable/roster_nav"
         android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/utterIV"/>
+        app:layout_constraintTop_toBottomOf="@id/activeEventsIV"/>
     <TextView
-        android:id="@+id/profileTV"
+        android:id="@+id/rostersTV"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_25sdp"
         android:textSize="@dimen/_12ssp"
         android:textColor="@color/black"
-        android:text="Profile"
+        android:text="Rosters"
         android:gravity="center_vertical"
-        android:fontFamily="@font/montserrat_medium"
+        android:fontFamily="@font/gotham_rounded_medium"
         android:layout_marginLeft="@dimen/_10sdp"
-        app:layout_constraintStart_toEndOf="@id/profileIV"
-        app:layout_constraintTop_toTopOf="@id/profileIV" />
+        app:layout_constraintStart_toEndOf="@id/rostersIV"
+        app:layout_constraintTop_toTopOf="@id/rostersIV" />
     <ImageView
-        android:id="@+id/myKhrimiIV"
+        android:id="@+id/accountabilityIV"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
-        android:src="@drawable/khirmi_icon"
+        android:src="@drawable/accountability_nav"
         android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profileIV"/>
+        app:layout_constraintTop_toBottomOf="@id/rostersIV"/>
     <TextView
-        android:id="@+id/myKhrimiTV"
+        android:id="@+id/accountabilityTV"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_25sdp"
         android:textSize="@dimen/_12ssp"
         android:textColor="@color/black"
-        android:text="My Khrimi"
+        android:text="Get Accountability"
         android:gravity="center_vertical"
-        android:fontFamily="@font/montserrat_medium"
+        android:fontFamily="@font/gotham_rounded_medium"
         android:layout_marginLeft="@dimen/_10sdp"
-        app:layout_constraintStart_toEndOf="@id/myKhrimiIV"
-        app:layout_constraintTop_toTopOf="@id/myKhrimiIV" />
+        app:layout_constraintStart_toEndOf="@id/accountabilityIV"
+        app:layout_constraintTop_toTopOf="@id/accountabilityIV" />
     <ImageView
         android:id="@+id/messageIV"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
-        android:src="@drawable/message_icon"
+        android:src="@drawable/messages_nav"
         android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/myKhrimiIV"/>
+        app:layout_constraintTop_toBottomOf="@id/accountabilityIV"/>
     <TextView
         android:id="@+id/messageTV"
         android:layout_width="wrap_content"
@@ -133,49 +143,60 @@
         android:textColor="@color/black"
         android:text="Messages"
         android:gravity="center_vertical"
-        android:fontFamily="@font/montserrat_medium"
+        android:fontFamily="@font/gotham_rounded_medium"
         android:layout_marginLeft="@dimen/_10sdp"
         app:layout_constraintStart_toEndOf="@id/messageIV"
         app:layout_constraintTop_toTopOf="@id/messageIV" />
     <ImageView
-        android:id="@+id/mediaIV"
+        android:id="@+id/calenderIV"
         android:layout_width="@dimen/_25sdp"
         android:layout_height="@dimen/_25sdp"
-        android:src="@drawable/media_icon"
+        android:src="@drawable/calender_nav"
         android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/messageIV"/>
     <TextView
-        android:id="@+id/mediaTV"
+        android:id="@+id/calenderTV"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_25sdp"
         android:textSize="@dimen/_12ssp"
         android:textColor="@color/black"
-        android:text="Media"
+        android:text="Calender"
         android:gravity="center_vertical"
-        android:fontFamily="@font/montserrat_medium"
+        android:fontFamily="@font/gotham_rounded_medium"
         android:layout_marginLeft="@dimen/_10sdp"
-        app:layout_constraintStart_toEndOf="@id/mediaIV"
-        app:layout_constraintTop_toTopOf="@id/mediaIV" />
-    <ImageView
-        android:id="@+id/learnIV"
-        android:layout_width="@dimen/_25sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:src="@drawable/learn_icon"
-        android:layout_marginTop="@dimen/_20sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mediaIV"/>
-    <TextView
-        android:id="@+id/learnTV"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_25sdp"
-        android:textSize="@dimen/_12ssp"
-        android:textColor="@color/black"
-        android:text="Learn"
-        android:gravity="center_vertical"
-        android:fontFamily="@font/montserrat_medium"
-        android:layout_marginLeft="@dimen/_10sdp"
-        app:layout_constraintStart_toEndOf="@id/learnIV"
-        app:layout_constraintTop_toTopOf="@id/learnIV" />
+        app:layout_constraintStart_toEndOf="@id/calenderIV"
+        app:layout_constraintTop_toTopOf="@id/calenderIV" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/createEventBT"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginBottom="@dimen/_32sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_64sdp"
+        android:text="Create Event"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:background="@drawable/rounded_background_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/userIV" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_14ssp"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/createEventBT"
+        app:layout_constraintEnd_toEndOf="@id/createEventBT"
+        app:layout_constraintBottom_toTopOf="@+id/createEventBT"
+        android:layout_marginBottom="@dimen/_16sdp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,10 @@ public class SelectSignUpActivity extends AppCompatActivity {
         binding.signInBT.setOnClickListener(v->{
             startActivity(new Intent(SelectSignUpActivity.this,SignInActivity.class));
         });
+
+        binding.signUpBT.setOnClickListener(v->{
+            startActivity(new Intent(SelectSignUpActivity.this,SignUpActivity.class));
+        });
     }
 
     private void setView() {
