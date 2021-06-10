@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NewEventActivity">
+
+    <include
+        android:id="@+id/includeView"
+        layout="@layout/include_app_bar_activities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_64sdp"
+        android:fontFamily="@font/gotham_rounded_bold"
+        android:text="Will this event be Geo Tracked?"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeView" />
+
+    <TextView
+        android:id="@+id/geoTrackingTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:fontFamily="@font/gotham_rounded_bold"
+        android:text="Geo Tracking"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV" />
+
+    <TextView
+        android:id="@+id/descriptionTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_32sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Attendees will be accounted for when they are within  50 meters of the event."
+        android:textAlignment="textStart"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toStartOf="@+id/geoTrackingSwitch"
+        app:layout_constraintStart_toStartOf="@id/geoTrackingTV"
+        app:layout_constraintTop_toBottomOf="@+id/geoTrackingTV" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/geoTrackingSwitch"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:thumbTint="@color/white"
+        android:trackTint="@color/text_gray"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        app:layout_constraintStart_toEndOf="@+id/descriptionTV"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionTV"
+        app:layout_constraintTop_toTopOf="@+id/descriptionTV"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextBT"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_32sdp"
+        android:background="@drawable/rounded_background_green"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

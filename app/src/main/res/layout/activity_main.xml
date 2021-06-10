@@ -18,16 +18,11 @@
             android:id="@+id/navView"/>
     </nl.psdcompany.duonavigationdrawer.views.DuoMenuView>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/back_color"
         android:tag="@string/tag_content">
-
-        <include
-            android:id="@+id/includeView"
-            layout="@layout/include_app_bar"/>
 
         <FrameLayout
             android:id="@+id/mainFragmentContainer"
@@ -35,6 +30,14 @@
             android:layout_height="match_parent"
             android:background="@color/back_color"/>
 
-    </LinearLayout>
+        <include
+            android:id="@+id/includeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_32sdp"
+            layout="@layout/include_app_bar"/>
+
+    </RelativeLayout>
 
 </nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout>

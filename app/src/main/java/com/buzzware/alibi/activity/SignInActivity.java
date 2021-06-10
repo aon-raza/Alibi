@@ -1,7 +1,9 @@
 package com.buzzware.alibi.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -9,6 +11,13 @@ import android.widget.TextView;
 
 import com.buzzware.alibi.R;
 import com.buzzware.alibi.databinding.ActivitySignInBinding;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+
+import java.util.List;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -33,8 +42,24 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         binding.signInBT.setOnClickListener(view -> {
-            startActivity(new Intent(SignInActivity.this, MainActivity.class));
-            finish();
+            Dexter.withContext(this).withPermissions(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+                    .withListener(new MultiplePermissionsListener() {
+                @Override
+                public void onPermissionsChecked(MultiplePermissionsReport report) {
+                    if(report.areAllPermissionsGranted()) {
+                        startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                        finish();
+                    }else{
+
+                    }
+                }
+
+                @Override
+                public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                    token.continuePermissionRequest();
+                }
+            }).check();
+
         });
     }
     private void setView() {

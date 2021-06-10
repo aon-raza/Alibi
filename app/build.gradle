@@ -48,4 +48,6 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
     
     implementation 'nl.psdcompany:duo-navigation-drawer:3.0.0'
+
+    implementation 'com.karumi:dexter:6.2.2'
 }

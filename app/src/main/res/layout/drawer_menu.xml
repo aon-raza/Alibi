@@ -6,29 +6,29 @@
     android:background="@color/white"
     android:paddingLeft="@dimen/_10sdp"
     android:paddingRight="@dimen/_10sdp">
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <View-->
+<!--        android:id="@+id/view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/drawerMenuIV"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginVertical="@dimen/_1sdp"
-        android:src="@drawable/drawer_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@id/view" />
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:id="@+id/drawerMenuIV"-->
+<!--        android:layout_width="@dimen/_40sdp"-->
+<!--        android:layout_height="@dimen/_40sdp"-->
+<!--        android:layout_marginVertical="@dimen/_4sdp"-->
+<!--        android:src="@drawable/drawer_icon"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/view"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/view"-->
+<!--        app:layout_constraintTop_toTopOf="@id/view" />-->
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/userIV"
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_80sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_48sdp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:scaleType="fitCenter"
         android:padding="@dimen/_2sdp"
@@ -40,7 +40,7 @@
         app:riv_oval="false"
         android:src="@drawable/pilot_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/userNameTV"
