@@ -2,6 +2,7 @@ package com.buzzware.alibi.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -32,5 +33,20 @@ public class NewEventActivity extends AppCompatActivity {
     }
 
     private void setListener() {
+        binding.nextBT.setOnClickListener(view -> {
+            startActivity(new Intent(NewEventActivity.this, AddLocationActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
+
+        binding.includeView.backIV.setOnClickListener(view -> {
+            finish();
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
+
+        binding.includeView.otherTV.setOnClickListener(view -> {
+            startActivity(new Intent(NewEventActivity.this, SignInActivity.class));
+            finish();
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
     }
 }

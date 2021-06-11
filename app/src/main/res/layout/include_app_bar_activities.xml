@@ -38,7 +38,7 @@
 
 
         <TextView
-            android:id="@+id/otherIV"
+            android:id="@+id/otherTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/gotham_rounded_medium"

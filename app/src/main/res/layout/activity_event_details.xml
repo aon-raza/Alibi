@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_color"
+    tools:context=".activity.EventDetailsActivity">
+
+    <include
+        android:id="@+id/includeView"
+        layout="@layout/include_app_bar_activities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/includeView"
+        app:layout_constraintBottom_toTopOf="@id/saveBT"
+        android:layout_marginBottom="@dimen/_8sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/eventIV"
+                android:layout_width="@dimen/_64sdp"
+                android:layout_height="@dimen/_64sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:src="@drawable/upload_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cameraIV"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:elevation="@dimen/_2sdp"
+                android:src="@drawable/camera"
+                app:layout_constraintBottom_toBottomOf="@id/eventIV"
+                app:layout_constraintStart_toStartOf="@id/eventIV" />
+
+
+            <TextView
+                android:id="@+id/eventNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:text="Event Name"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventIV" />
+
+            <EditText
+                android:id="@+id/eventNameET"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:autoSizeMaxTextSize="@dimen/_12ssp"
+                android:autoSizeMinTextSize="@dimen/_10ssp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/rounded_background_white"
+                android:fontFamily="@font/gotham_rounded_medium"
+                android:hint="Type here"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eventNameTV" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/geoTrackedIV"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:visibility="gone"
+                android:src="@drawable/geo_tracked"
+                android:layout_marginEnd="@dimen/_2sdp"
+                app:layout_constraintBottom_toBottomOf="@id/geoTrackedTV"
+                app:layout_constraintEnd_toStartOf="@id/geoTrackedTV"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/geoTrackedTV" />
+
+            <TextView
+                android:id="@+id/geoTrackedTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:text="Geo Tracked"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/geoTrackedIV"
+                app:layout_constraintTop_toBottomOf="@+id/eventNameET" />
+
+            <TextView
+                android:id="@+id/eventTypeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/gotham_rounded_medium"
+                android:text="Private"
+                android:textAlignment="textStart"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/eventNameET"
+                app:layout_constraintTop_toBottomOf="@+id/eventNameET" />
+
+            <TextView
+                android:id="@+id/descriptionTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:fontFamily="@font/gotham_rounded_medium"
+                android:text="No users can see this event unless you share it with them."
+                android:textAlignment="textStart"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@+id/eventTypeSwitch"
+                app:layout_constraintStart_toStartOf="@id/eventTypeTV"
+                app:layout_constraintTop_toBottomOf="@+id/eventTypeTV" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/eventTypeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:thumbTint="@color/white"
+                android:trackTint="@color/text_gray"
+                app:layout_constraintBottom_toTopOf="@+id/descriptionTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/descriptionTV"
+                app:layout_constraintTop_toTopOf="@+id/descriptionTV" />
+
+            <TextView
+                android:id="@+id/shareTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:text="Share With"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTV" />
+
+            <Spinner
+                android:id="@+id/shareSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/rounded_background_gray"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_56sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shareTV" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/spinner_arrow"
+                app:layout_constraintBottom_toBottomOf="@+id/shareSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/shareSpinner"
+                app:layout_constraintTop_toTopOf="@+id/shareSpinner" />
+
+            <TextView
+                android:id="@+id/timeDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:text="Date/Time"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shareSpinner" />
+
+            <EditText
+                android:id="@+id/timeDateET"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:autoSizeMaxTextSize="@dimen/_12ssp"
+                android:autoSizeMinTextSize="@dimen/_10ssp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/rounded_background_white"
+                android:fontFamily="@font/gotham_rounded_medium"
+                android:hint="Type here"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text="5/14/2021 - 14:30"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/timeDateTV" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/calender_black"
+                app:layout_constraintBottom_toBottomOf="@+id/timeDateET"
+                app:layout_constraintEnd_toEndOf="@+id/timeDateET"
+                app:layout_constraintTop_toTopOf="@+id/timeDateET" />
+
+
+            <TextView
+                android:id="@+id/reminderTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:text="Reminder"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeDateET" />
+
+            <Spinner
+                android:id="@+id/reminderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/rounded_background_white"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_56sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reminderTV" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/spinner_arrow"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/reminderSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/reminderSpinner"
+                app:layout_constraintTop_toTopOf="@+id/reminderSpinner" />
+
+            <TextView
+                android:id="@+id/uniformTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:text="Uniform"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reminderSpinner" />
+
+            <Spinner
+                android:id="@+id/uniformSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_16sdp"
+                android:background="@drawable/rounded_background_white"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_56sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uniformTV" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:src="@drawable/spinner_arrow"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/uniformSpinner"
+                app:layout_constraintEnd_toEndOf="@+id/uniformSpinner"
+                app:layout_constraintTop_toTopOf="@+id/uniformSpinner" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveBT"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/rounded_background_green"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
