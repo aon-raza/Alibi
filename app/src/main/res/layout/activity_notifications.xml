@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_color"
+    tools:context=".activity.NotificationsActivity">
+
+    <include
+        android:id="@+id/includeView"
+        layout="@layout/include_app_bar_activities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inviteTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:fontFamily="@font/gotham_rounded_bold"
+        android:text="Cindy has invited you to the \n “Target Shopping Day” \nevent."
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeView" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/inviterIV"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_52sdp"
+        android:src="@drawable/inviter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inviteTV" />
+
+    <TextView
+        android:id="@+id/inviterNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Cindy Dupler"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toEndOf="@+id/inviterIV"
+        app:layout_constraintTop_toTopOf="@+id/inviterIV" />
+
+    <TextView
+        android:id="@+id/eventTimeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="In 2 Days"
+        android:textAlignment="textStart"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/inviterIV"
+        app:layout_constraintTop_toBottomOf="@id/inviterNameTV" />
+
+    <TextView
+        android:id="@+id/eventDetailsTV"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Target at Ala Moana Shopping Mall"
+        android:textAlignment="textStart"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/inviterIV"
+        app:layout_constraintTop_toBottomOf="@id/eventTimeTV" />
+
+    <TextView
+        android:id="@+id/eventTypeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:background="@drawable/rounded_background_light_green"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:text="Public"
+        android:textAlignment="textStart"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/inviterIV" />
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@color/text_gray"
+        app:layout_constraintTop_toBottomOf="@id/eventDetailsTV" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/geoTrackedIV"
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:src="@drawable/geo_tracked"
+        app:layout_constraintBottom_toBottomOf="@id/geoTrackedTV"
+        app:layout_constraintEnd_toStartOf="@id/geoTrackedTV"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/geoTrackedTV" />
+
+    <TextView
+        android:id="@+id/geoTrackedTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/gotham_rounded_bold"
+        android:text="Geo Tracked"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/geoTrackedIV"
+        app:layout_constraintTop_toBottomOf="@+id/lineView" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/callIV"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/btn_call"
+        app:layout_constraintEnd_toStartOf="@+id/chatIV"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/geoTrackedIV"
+        android:layout_marginEnd="@dimen/_16sdp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chatIV"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/btn_chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/callIV"
+        app:layout_constraintTop_toBottomOf="@id/geoTrackedIV"
+        android:layout_marginStart="@dimen/_16sdp"/>
+
+    <TextView
+        android:id="@+id/callTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Call"
+        android:textAlignment="center"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="@id/callIV"
+        app:layout_constraintEnd_toEndOf="@id/callIV"
+        app:layout_constraintTop_toBottomOf="@id/chatIV" />
+
+    <TextView
+        android:id="@+id/chatTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Chat"
+        android:textAlignment="center"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="@id/chatIV"
+        app:layout_constraintEnd_toEndOf="@id/chatIV"
+        app:layout_constraintTop_toBottomOf="@id/chatIV" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acceptBtn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:background="@drawable/left_rounded_background_green"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Accept"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:layout_marginStart="@dimen/_24sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/declineBtn"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/declineBtn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_48sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:background="@drawable/right_rounded_background_red"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Decline"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/acceptBtn"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

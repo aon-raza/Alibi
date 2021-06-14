@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/_16sdp"
+    android:id="@+id/mainLayout">
+
+    <TextView
+        android:id="@+id/eventNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="SAPR Training"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        android:paddingBottom="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/eventTimeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="Today"
+        android:textAlignment="textStart"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventNameTV" />
+
+    <TextView
+        android:id="@+id/eventDetailsTV"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:fontFamily="@font/gotham_rounded_bold"
+        android:text="Wiki Classroom 14 Attendees"
+        android:textAlignment="textStart"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toEndOf="@+id/eventTimeTV"
+        app:layout_constraintTop_toBottomOf="@id/eventNameTV" />
+
+    <TextView
+        android:id="@+id/eventTypeTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_background_light_green"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_4sdp"
+        android:text="Public"
+        android:textAlignment="textStart"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@color/text_gray"
+        app:layout_constraintTop_toBottomOf="@id/eventDetailsTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

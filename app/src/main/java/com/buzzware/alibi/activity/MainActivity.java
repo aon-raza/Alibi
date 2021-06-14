@@ -62,6 +62,22 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, NewEventActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
+
+        binding.includeView.otherIV.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
+
+        binding.navView.logoutBtn.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, SignInActivity.class));
+            finish();
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
+
+        binding.navView.activeEventsTV.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ActiveEventsActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        });
     }
 
     private void checkOpenOrCloseDrawer(){
