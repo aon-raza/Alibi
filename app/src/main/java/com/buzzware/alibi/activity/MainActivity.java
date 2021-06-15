@@ -61,11 +61,13 @@ public class MainActivity extends AppCompatActivity {
         binding.navView.createEventBT.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, NewEventActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            checkOpenOrCloseDrawer();
         });
 
         binding.includeView.otherIV.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            checkOpenOrCloseDrawer();
         });
 
         binding.navView.logoutBtn.setOnClickListener(view -> {
@@ -77,6 +79,19 @@ public class MainActivity extends AppCompatActivity {
         binding.navView.activeEventsTV.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, ActiveEventsActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            checkOpenOrCloseDrawer();
+        });
+
+        binding.navView.rostersTV.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, RostersActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            checkOpenOrCloseDrawer();
+        });
+
+        binding.navView.calenderTV.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, CalenderActivity.class));
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            checkOpenOrCloseDrawer();
         });
     }
 

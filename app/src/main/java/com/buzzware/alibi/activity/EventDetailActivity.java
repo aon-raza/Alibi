@@ -12,8 +12,10 @@ import android.view.WindowManager;
 
 import com.buzzware.alibi.R;
 import com.buzzware.alibi.adapters.RecyclerViewAdapterEvents;
+import com.buzzware.alibi.adapters.RecyclerViewAdapterPerson;
 import com.buzzware.alibi.databinding.ActivityActiveEventsBinding;
-import com.buzzware.alibi.databinding.ActivityAddLocationBinding;
+import com.buzzware.alibi.databinding.ActivityEventDetailBinding;
+import com.buzzware.alibi.databinding.ActivityEventDetailsBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,20 +23,19 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class ActiveEventsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class EventDetailActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
-    ActivityActiveEventsBinding binding;
+    ActivityEventDetailBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityActiveEventsBinding.inflate(getLayoutInflater());
+        binding = ActivityEventDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setView();
         setListener();
-        initRecyclerViewEvents();
+        initRecyclerViewPerson();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -63,19 +64,17 @@ public class ActiveEventsActivity extends FragmentActivity implements OnMapReady
             finish();
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
-
-        binding.createEventBT.setOnClickListener(v -> {
-            startActivity(new Intent(ActiveEventsActivity.this, NewEventActivity.class));
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        binding.lineView.setOnClickListener(view -> {
+            binding.upperCL.setVisibility(View.GONE);
         });
     }
 
-    private void initRecyclerViewEvents() {
+    private void initRecyclerViewPerson() {
         LinearLayoutManager layoutManager5 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        binding.eventsRV.setLayoutManager(layoutManager5);
+        binding.personRV.setLayoutManager(layoutManager5);
 
-        RecyclerViewAdapterEvents adapter = new RecyclerViewAdapterEvents(this, null);
-        binding.eventsRV.setItemAnimator(new DefaultItemAnimator());
-        binding.eventsRV.setAdapter(adapter);
+        RecyclerViewAdapterPerson adapter = new RecyclerViewAdapterPerson(this, null);
+        binding.personRV.setItemAnimator(new DefaultItemAnimator());
+        binding.personRV.setAdapter(adapter);
     }
 }

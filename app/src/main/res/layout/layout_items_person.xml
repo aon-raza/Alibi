@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/_16sdp"
+    android:id="@+id/mainLayout">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/geoTrackedIV"
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="@dimen/_14sdp"
+        android:src="@drawable/geo_tracked"
+        app:layout_constraintBottom_toBottomOf="@id/stateTV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/stateTV" />
+
+    <TextView
+        android:id="@+id/stateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:fontFamily="@font/gotham_rounded_bold"
+        android:text="Here!"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="@dimen/_4sdp"
+        app:layout_constraintStart_toEndOf="@id/geoTrackedIV"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/personNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_rounded_medium"
+        android:text="SGT Russle, I 1234567891"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintStart_toEndOf="@id/stateTV"
+        app:layout_constraintTop_toTopOf="@id/stateTV" />
+
+    <TextView
+        android:id="@+id/detailsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_rounded_bold"
+        android:text="42min"
+        android:textAlignment="textStart"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="@id/personNameTV"
+        app:layout_constraintTop_toBottomOf="@id/personNameTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

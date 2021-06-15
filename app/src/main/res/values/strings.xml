@@ -3,4 +3,5 @@
     <string name="title_activity_create_event_map">Map</string>
     <string name="title_activity_add_location">Map</string>
     <string name="title_activity_active_events">Map</string>
+    <string name="title_activity_event_detail">Map</string>
 </resources>

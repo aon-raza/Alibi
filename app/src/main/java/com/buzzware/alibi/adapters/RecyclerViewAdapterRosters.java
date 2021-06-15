@@ -1,8 +1,6 @@
 package com.buzzware.alibi.adapters;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.buzzware.alibi.R;
-import com.buzzware.alibi.activity.EventDetailActivity;
 import com.buzzware.alibi.databinding.LayoutItemsEventsBinding;
+import com.buzzware.alibi.databinding.LayoutItemsRostersBinding;
 
 import java.util.List;
 
 
-public class RecyclerViewAdapterEvents extends RecyclerView.Adapter<RecyclerViewAdapterEvents.ViewHolder>  {
+public class RecyclerViewAdapterRosters extends RecyclerView.Adapter<RecyclerViewAdapterRosters.ViewHolder>  {
 
     private static final String TAG = "RCA_C_Orders";
 
     private List<String> list;
     private Context mContext;
 
-    public RecyclerViewAdapterEvents(Context mContext, List<String> list) {
+    public RecyclerViewAdapterRosters(Context mContext, List<String> list) {
         this.list = list;
         this.mContext = mContext;
     }
@@ -33,7 +31,7 @@ public class RecyclerViewAdapterEvents extends RecyclerView.Adapter<RecyclerView
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutItemsEventsBinding.inflate(LayoutInflater.from(parent.getContext()),
+        return new ViewHolder(LayoutItemsRostersBinding.inflate(LayoutInflater.from(parent.getContext()),
                 parent, false));
     }
 
@@ -41,22 +39,21 @@ public class RecyclerViewAdapterEvents extends RecyclerView.Adapter<RecyclerView
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
         Log.d(TAG, "onBindViewHolder : called.");
 
-        if((i%2) == 0){
-            viewHolder.binding.eventNameTV.setText("Medical Appointment");
-            viewHolder.binding.eventTimeTV.setText("In 2 Days");
-            viewHolder.binding.eventDetailsTV.setText("Trippler Army Medical Center");
-            viewHolder.binding.eventTypeTV.setText("Private");
-            viewHolder.binding.eventTypeTV.setBackground(mContext.getResources().getDrawable(R.drawable.rounded_background_light_red));
-            viewHolder.binding.eventTypeTV.setTextColor(mContext.getResources().getColor(R.color.red));
+        if((i%2) == 1){
+            viewHolder.binding.rosterNameTV.setText("Going Away");
+            viewHolder.binding.membersTV.setText("36 Members");
+            viewHolder.binding.rosterTypeTV.setText("Private");
+            viewHolder.binding.rosterTypeTV.setBackground(mContext.getResources().getDrawable(R.drawable.rounded_background_light_red));
+            viewHolder.binding.rosterTypeTV.setTextColor(mContext.getResources().getColor(R.color.red));
 
         }
 
         viewHolder.binding.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, EventDetailActivity.class);
-                mContext.startActivity(intent);
-                ((Activity) mContext).overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+//                Intent intent = new Intent(mContext, Chat.class);
+//                mContext.startActivity(intent);
+//                ((Activity) mContext).overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
     }
@@ -80,9 +77,9 @@ public class RecyclerViewAdapterEvents extends RecyclerView.Adapter<RecyclerView
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        LayoutItemsEventsBinding binding;
+        LayoutItemsRostersBinding binding;
 
-        public ViewHolder(@NonNull LayoutItemsEventsBinding binding) {
+        public ViewHolder(@NonNull LayoutItemsRostersBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
 

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EventDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/upperCL"
+        map:layout_constraintHeight_percent="0.50"
+        map:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomCL"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/back_color"
+        map:layout_constraintTop_toBottomOf="@id/upperCL"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:id="@+id/lineView"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:background="@drawable/rounded_background_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_64sdp"
+            android:id="@+id/progressIV"
+            android:src="@drawable/circular_progress"
+            map:layout_constraintTop_toBottomOf="@id/lineView"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_12sdp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mainLayout"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:paddingHorizontal="@dimen/_16sdp"
+            map:layout_constraintTop_toBottomOf="@+id/progressIV">
+
+            <TextView
+                android:id="@+id/eventNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham_rounded_medium"
+                android:text="SAPR Training"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                android:paddingBottom="@dimen/_4sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/eventTimeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gotham_rounded_medium"
+                android:text="Today"
+                android:textAlignment="textStart"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eventNameTV" />
+
+            <TextView
+                android:id="@+id/eventDetailsTV"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:fontFamily="@font/gotham_rounded_bold"
+                android:text="Wiki Classroom 14 Attendees"
+                android:textAlignment="textStart"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toEndOf="@+id/eventTimeTV"
+                app:layout_constraintTop_toBottomOf="@id/eventNameTV" />
+
+            <TextView
+                android:id="@+id/eventTypeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background_light_green"
+                android:fontFamily="@font/gotham_rounded_medium"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="Public"
+                android:textAlignment="textStart"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/lineView2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@color/text_gray"
+                app:layout_constraintTop_toBottomOf="@id/eventDetailsTV" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/personRV"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/mainLayout"
+            app:layout_constraintBottom_toTopOf="@id/messageET"/>
+
+        <EditText
+            android:id="@+id/messageET"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="1"
+            android:layout_height="@dimen/_45sdp"
+            android:autoSizeMaxTextSize="@dimen/_12ssp"
+            android:autoSizeMinTextSize="@dimen/_10ssp"
+            android:autoSizeTextType="uniform"
+            android:background="@color/white"
+            android:fontFamily="@font/gotham_rounded_medium"
+            android:hint="Write a message..."
+            android:textColorHint="@color/text_gray"
+            android:imeOptions="actionDone"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_32sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/send"
+            map:layout_constraintTop_toTopOf="@id/messageET"
+            map:layout_constraintBottom_toBottomOf="@id/messageET"
+            map:layout_constraintEnd_toEndOf="@id/messageET"
+            android:layout_marginEnd="@dimen/_12sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:id="@+id/backIV"
+        android:src="@drawable/circular_back"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

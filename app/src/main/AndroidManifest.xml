@@ -33,8 +33,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".activity.EventDetailActivity"
+            android:label="@string/title_activity_event_detail"></activity>
+        <activity android:name=".activity.CalenderActivity" />
+        <activity android:name=".activity.RostersActivity" />
+        <activity
             android:name=".activity.ActiveEventsActivity"
-            android:label="@string/title_activity_active_events"></activity>
+            android:label="@string/title_activity_active_events" />
         <activity android:name=".activity.NotificationsActivity" />
         <activity android:name=".activity.EventDetailsActivity" />
         <activity
