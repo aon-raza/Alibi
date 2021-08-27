@@ -65,7 +65,7 @@ public class ActiveEventsActivity extends FragmentActivity implements OnMapReady
         });
 
         binding.createEventBT.setOnClickListener(v -> {
-            startActivity(new Intent(ActiveEventsActivity.this, NewEventActivity.class));
+            startActivity(new Intent(ActiveEventsActivity.this, AddLocationActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
     }

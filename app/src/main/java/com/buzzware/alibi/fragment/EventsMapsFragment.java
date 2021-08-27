@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.buzzware.alibi.R;
+import com.buzzware.alibi.activity.AddLocationActivity;
 import com.buzzware.alibi.activity.NewEventActivity;
 import com.buzzware.alibi.databinding.FragmentEventsMapsBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -50,7 +51,7 @@ public class EventsMapsFragment extends Fragment {
             binding.bottomCL.setVisibility(View.GONE);
         });
         binding.createEventBT.setOnClickListener(v -> {
-            startActivity(new Intent(getActivity(), NewEventActivity.class));
+            startActivity(new Intent(getActivity(), AddLocationActivity.class));
             getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
     }

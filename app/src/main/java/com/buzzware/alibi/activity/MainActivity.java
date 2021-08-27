@@ -11,15 +11,17 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.buzzware.alibi.R;
+import com.buzzware.alibi.classes.Constants;
 import com.buzzware.alibi.databinding.ActivityMainBinding;
 import com.buzzware.alibi.databinding.ActivitySignInBinding;
 import com.buzzware.alibi.fragment.EventsMapsFragment;
 
 import nl.psdcompany.duonavigationdrawer.widgets.DuoDrawerToggle;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
 
     @Override
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         binding.navView.createEventBT.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, NewEventActivity.class));
+            startActivity(new Intent(MainActivity.this, AddLocationActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             checkOpenOrCloseDrawer();
         });
@@ -71,9 +73,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.navView.logoutBtn.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, SignInActivity.class));
-            finish();
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            if(isOnline()) {
+                mAuth.signOut();
+                Constants.currentUser = null;
+                Toast.makeText(getApplicationContext(),"Signed Out!",Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intent1);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                finish();
+            }
         });
 
         binding.navView.activeEventsTV.setOnClickListener(view -> {
@@ -110,5 +118,11 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(binding.mainFragmentContainer.getId(), fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        moveTaskToBack(true);
     }
 }
